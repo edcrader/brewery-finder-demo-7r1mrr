@@ -1,0 +1,13 @@
+<div class="input-field col s6">
+  <!-- TODO 4: Add an input to search by state.  Should trigger on keyup.enter -->
+  <input #stateInput id="state" type="text" (keyup.enter)="searchByState(stateInput.value)"> <!-- STEP 4 -->
+  <label for="state">Find A Brewery</label>
+</div>
+<ul>
+  <!-- TODO 7: Loop over breweries and make a list of BreweryListItems -->
+    <app-brewery-list-item *ngFor="let brewery of breweries$ | async"
+      [brewery]="brewery"
+      (toggleSave)="onToggleSave(brewery)"
+      [favorited]="brewery.favorited">
+      </app-brewery-list-item>
+</ul>

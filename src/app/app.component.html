@@ -1,0 +1,25 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo right">Logo</a>
+    <ul id="nav-mobile" >
+      <!-- TODO: 2 Add function to toggle view -->
+      <li>
+        <a (click)="toggleView('Search')">Search</a> <!-- STEP 2-->
+      </li>
+      <li>
+        <a (click)="toggleView('Favorites')"> <!-- STEP 2-->
+          Favorites 
+          <span class="new badge blue">{{ (favorites$ | async).length }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- TODO 1: Add condition to toggle view -->
+<ng-container *ngIf="view === 'Search'">    <!--Step 1 -->
+<app-brewery-list></app-brewery-list>
+</ng-container>
+<ng-container *ngIf="view === 'Favorites'">
+<app-brewery-favorites></app-brewery-favorites>
+</ng-container>

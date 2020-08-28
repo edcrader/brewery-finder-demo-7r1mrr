@@ -1,0 +1,14 @@
+<div class="collection-item">
+  <div>
+   {{ brewery.name }}
+  </div>
+  <div>
+    <a [href]="brewery.website_url">Visit Online</a>
+  </div>
+  <div>
+    <a [href]="'tel:' + brewery.phone">Contact</a>
+  </div>
+  <!-- TODO 9: Add a button to toggleSave the brewery.id -->
+  <button class="btn-flat"    (click)="toggleSave.emit(brewery.id)">  <i [ngClass]="favorited ? 'material-icons red-text' : 'material-icons'">favorite</i>  </button>
+  
+</div>
